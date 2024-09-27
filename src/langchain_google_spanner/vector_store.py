@@ -872,7 +872,7 @@ class SpannerVectorStore(VectorStore):
             embedding_column=self._embedding_column,
             select_column_names=select_column_names,
             vector_embedding_placeholder=parameter[0],
-            filter=pre_filter if pre_filter is not None else "1 = 1",
+            filter=pre_filter if pre_filter else "1 = 1",
             k_count=k,
             distance_function=distance_function,
             distance_alias=KNN_DISTANCE_SEARCH_QUERY_ALIAS,
